@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="ActualValueAllg.cs" />
+    <Compile Include="ActualValueHzg.cs" />
+    <Compile Include="ActualValueKessel.cs" />
+    <Compile Include="ActualValuePuffer.cs" />
     <Compile Include="Genre.cs" />
     <Compile Include="MediumType.cs" />
     <Compile Include="ExtMovie.cs" />
