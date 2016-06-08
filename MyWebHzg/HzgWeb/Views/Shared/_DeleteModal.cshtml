@@ -1,0 +1,32 @@
+﻿
+@using(Html.BeginForm((string)ViewData["DeleteAction"], (string)ViewData["Controller"], FormMethod.Post))
+{   
+    @Html.AntiForgeryToken()
+    
+    <div class="modal fade" id="@ViewData["Id"]" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <input type="hidden" id="id" name="id" />  
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+                
+                <div id="header">
+
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <dl id="body" class="dl-horizontal">
+
+                </dl>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="modClose">Close</button>
+                <button type="submit" class="btn btn-primary hidden" id="modDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>   
+}
+

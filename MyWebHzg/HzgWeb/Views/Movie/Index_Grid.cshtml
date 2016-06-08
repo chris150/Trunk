@@ -1,0 +1,114 @@
+﻿
+@model List<MyWebHzg.Entities.ExtMovie>
+@using Globalization;
+@using GridMvc.Html;
+
+@{
+    ViewBag.Title = "Index_Grid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    @Styles.Render("~/Content/gridmvc");
+   
+    <style type="text/css" >
+
+        /* Grid table generell */
+        table.grid-table {margin: 0; border: 2px; border-style: solid; border-color: #cf84e1; }
+        table.grid-tabel .grid-wrap {padding: 0; position: relative; }
+        table.grid-table .grid-empty-text { color: #666; }
+
+        /* Grid headers */
+        table.grid-table .grid-header { background-color: #cf84e1; border: 1px; border-bottom: 2px; border-style: solid; border-color: #999;}
+
+        /* Sortier Pfeile ändern*/
+        table.grid-table .grid-header .sorted-desc .grid-sort-arrow:after{
+            margin-left: 8px;
+            font-family: 'Glyphicons Halflings';
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-weight: lighter;
+            content: "\e094";
+            vertical-align:bottom;
+        }
+
+        table.grid-table .grid-header .sorted-asc .grid-sort-arrow:after {
+            margin-left: 8px;
+            font-family: 'Glyphicons Halflings';
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-weight: lighter;
+            content: "\e093";
+            vertical-align: bottom;
+        }
+
+        /* body */
+        table.grid-table tr.grid-row-selected td { background: #000000 !important; color: white; }
+
+
+    </style>
+
+    
+}
+
+
+<h2>Index - MVCGrid Tutorial</h2>
+
+<div class="row">
+    <div class="col-md-12" id="MovieGrid">
+        <input type="hidden" id="selectedMovieId" />
+
+        @(
+         Html.Grid(Model).Named("MovieGrid")
+            .Columns(columns =>
+                            {
+                                columns.Add(e => e.MovieId, true).Titled("MovieId");
+                                columns.Add(e => e.GenreCd).Titled(BasicRes.Genre).Filterable(true).SetWidth(100);
+                                columns.Add(e => e.MediumTypeName).Titled(BasicRes.Medium).Filterable(true).SetWidth(100);
+                                columns.Add(e => e.Title).Titled(BasicRes.Title).Filterable(true).SetWidth(600);
+
+                                columns.Add(e => e.Price).Titled(BasicRes.Price).Format("{0:0.00}").Filterable(true).SetWidth(100);
+                                columns.Add(e => e.ReleaseDate).Titled(BasicRes.ReleaseDate).Format("{0:d}").SetWidth(100);
+
+                                columns.Add().Encoded(false).Sanitized(false).RenderValueAs(e =>
+                                    @Html.Raw("<a tabindex='-1' data-name='Edit' class='glyphicon glyphicon-pencil' href='/Movie/Edit/" +
+                                    @e.MovieId + "?ReturnUri=/Movie/Index_Grid' title='" + BasicRes.Edit + "' />")).Css("text-center");
+
+                                columns.Add().Encoded(false).Sanitized(false).RenderValueAs(e =>
+                                    @Html.ActionLink(" ", "Edit", new { id = e.MovieId, ReturnUri = "/Movie/index_Grid" }, new { @class = "glyphicon glyphicon-pencil text-center" }));
+                            })
+            .WithPaging(5)
+            .Sortable(true)
+            .WithMultipleFilters()
+            .SetLanguage(ViewBag.localName)            
+        )
+    </div>
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/gridmvc")
+
+    <script type="text/javascript">
+
+        $(function () {
+            pageGrids.MovieGrid.onRowSelect(
+                function (e) {
+                    $('#selectedMovieId').val(e.row.MovieId);
+                });
+        });
+
+
+        $(document).ready(function () {
+            $('.grid-filter-btn').attr('title', 'Dieses Feld filtern');
+
+            $.each($('#MovieGrid').find('tr').find('td'), function (index, value) {
+                $(this).dblclick(function () {
+                    window.location.href = '/Movie/Edit/' + $('#selectedMovieId').val() + '?ReturnUri=/Movie/Index_Grid';
+                });
+            });
+        });
+
+    </script>
+
+}

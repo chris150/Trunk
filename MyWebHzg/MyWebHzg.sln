@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{3E50AE14-3CA7-487C-AA35-E86BF726D3D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{9306F41C-F7E3-4952-A1FB-096125F8CC0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globalization", "Globalization\Globalization.csproj", "{19BF836A-D338-43A9-A21C-038B33B0C8A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C233D764-A3FF-4926-8A5E-91F65AB7415E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{091A7CE6-84F2-44DA-A426-D90B7E6D51AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseRepositories", "BaseRepositories\BaseRepositories.csproj", "{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1FD0752-F5D6-4A6E-8045-79DD69DC2FA0}"
+	ProjectSection(SolutionItems) = preProject
+		images\imgres.htm = images\imgres.htm
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{8283FBE1-160F-43A5-8D3D-919F0A97152A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HzgWebService", "HzgWebService\HzgWebService.csproj", "{CA0207C1-2562-4177-A122-6CE4D100632C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebHzgTest", "MyWebHzgTest\MyWebHzgTest.csproj", "{7F12B7E6-DD16-46AB-A063-6EACD9BBBCAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HzgWeb", "HzgWeb\HzgWeb.csproj", "{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19BF836A-D338-43A9-A21C-038B33B0C8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BF836A-D338-43A9-A21C-038B33B0C8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BF836A-D338-43A9-A21C-038B33B0C8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BF836A-D338-43A9-A21C-038B33B0C8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8283FBE1-160F-43A5-8D3D-919F0A97152A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8283FBE1-160F-43A5-8D3D-919F0A97152A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8283FBE1-160F-43A5-8D3D-919F0A97152A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8283FBE1-160F-43A5-8D3D-919F0A97152A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0207C1-2562-4177-A122-6CE4D100632C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0207C1-2562-4177-A122-6CE4D100632C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0207C1-2562-4177-A122-6CE4D100632C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0207C1-2562-4177-A122-6CE4D100632C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F12B7E6-DD16-46AB-A063-6EACD9BBBCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F12B7E6-DD16-46AB-A063-6EACD9BBBCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F12B7E6-DD16-46AB-A063-6EACD9BBBCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F12B7E6-DD16-46AB-A063-6EACD9BBBCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3852879-8D7D-40F2-8EB0-C3DE19D4A4BD} = {3E50AE14-3CA7-487C-AA35-E86BF726D3D4}
+		{4CFA1DB9-722C-44D2-A4F2-1E8AA471427D} = {3E50AE14-3CA7-487C-AA35-E86BF726D3D4}
+		{8283FBE1-160F-43A5-8D3D-919F0A97152A} = {3E50AE14-3CA7-487C-AA35-E86BF726D3D4}
+		{CA0207C1-2562-4177-A122-6CE4D100632C} = {3E50AE14-3CA7-487C-AA35-E86BF726D3D4}
+		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400} = {9306F41C-F7E3-4952-A1FB-096125F8CC0D}
+	EndGlobalSection
+EndGlobal

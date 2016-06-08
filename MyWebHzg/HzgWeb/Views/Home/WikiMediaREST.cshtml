@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "WikiMediaREST";
+}
+
+@section styles{
+     <!-- Hier kommen unser Styles hinein. -->
+    <style type="text/css">
+        .minWidth100Proz{
+            min-width: 100%;
+        }
+
+        .form-control {
+            max-width: 150px;
+            background-color: #fff;
+        }
+
+        .checkbox{
+            margin-left: 21px;
+        }
+    </style>
+
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@using (Html.BeginForm("WikiMediaREST", "Home", FormMethod.Post, new { @class = "form-horizontal", role= "form" }))
+{
+    <div class="form-group">
+        @Html.Label("Filter criteria", new  { @class = "col-md-2 col-sm-2 control-label" })
+        <!-- Alternativ mit RAW-Html <label class="col-md-2 control-label" for="Filter criteria">Filter criteria</label> -->
+        <div class="col-md-10 col-sm-10">
+            @Html.TextBox("FilterCriteria", "", new { @class = "form-control" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-2">
+
+                <div class="checkbox">                    
+                    @Html.CheckBox("ForceXML")
+                    @Html.Label("Force XML")
+                </div>
+
+
+            </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-2">
+            <input type="button" value="Read Addressses by Lastname" class="btn btn-default" onclick="GetAddressesByLastname();" />
+            <input type="button" value="Read Addressses" class="btn btn-default" onclick="GetAddresses();"  />
+            <input type="button" value="New Addresss" class="btn btn-default" onclick="CreateAddress();" />
+            <input type="button" value="Update Addresss" class="btn btn-default" onclick="" />
+            <input type="button" value="Delete Address" class="btn btn-default" onclick="DeleteAddress();"></div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Result", new { @class="col-md-2 control-label"})
+        <div class="col-md-10">
+            @Html.TextArea("TextAreaResult", "", new { @class="form-control", rows="10", style="min-width: 100%" })
+        </div>
+
+    </div>
+    
+}

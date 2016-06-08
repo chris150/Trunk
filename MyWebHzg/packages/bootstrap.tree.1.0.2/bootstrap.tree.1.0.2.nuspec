@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>bootstrap.tree</id>
+    <version>1.0.2</version>
+    <title>bootstrap.tree</title>
+    <authors>jhfrench/bootstrap-tree</authors>
+    <owners>jhfrench/bootstrap-tree</owners>
+    <projectUrl>https://github.com/jhfrench/bootstrap-tree</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>JavaScript and LESS/CSS for creating Bootstrap-themed trees (to display hierarchical data).</description>
+    <summary />
+    <tags>bootstrap tree</tags>
+    <dependencies>
+      <dependency id="bootstrap" version="3.0.0" />
+    </dependencies>
+  </metadata>
+</package>

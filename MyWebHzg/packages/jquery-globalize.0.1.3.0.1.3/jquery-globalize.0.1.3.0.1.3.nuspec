@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>jquery-globalize.0.1.3</id>
+    <version>0.1.3</version>
+    <title>jquery-globalize.0.1.3</title>
+    <authors>Keith Rull</authors>
+    <owners>Keith Rull</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>jquery-globalize.0.1.3</description>
+    <summary />
+    <releaseNotes>jquery-globalize.0.1.3</releaseNotes>
+    <copyright>The JQuery Project</copyright>
+    <tags>globalize</tags>
+  </metadata>
+</package>

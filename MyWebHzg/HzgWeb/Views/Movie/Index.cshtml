@@ -1,0 +1,131 @@
+﻿@model IEnumerable<MyWebHzg.Entities.ExtMovie>
+@using Globalization
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*So kann der style vom Modalen Dialog verändert werden.*@ 
+@section styles{
+    <style>
+        .modal-dialog {
+            margin-top: 80px;
+        }
+    </style>
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (Html.BeginForm("Index", "Movie", FormMethod.Get, new { @class = "form-horizontal", @id="formFilter" }))
+    {
+        <!-- Eine Reihe von Eingabe-Controls -->
+        <div class="form-group">
+            <!-- Neuer Datensatz Button -->
+            <div class="col-md-1">
+               <a class="btn btn-sm btn-primary" href="@Url.Action("Create")">
+                    <i class="glyphicon glyphicon-star" title="@BasicRes.CreateNew"></i>
+                    @BasicRes.CreateNew
+                </a>
+            </div>
+            <!-- Filter: Genre -->
+            @Html.Label(BasicRes.Genre, new { @class="col-md-1 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownList("GenreFilter", (List<SelectListItem>)ViewBag.Genres, "*", new { @class = "form-control" })
+            </div>
+            <!-- Filter: MediumType -->
+            @Html.Label(BasicRes.Medium, new { @class = "col-md-1 control-label" })
+            <div class="col-md-2">
+                @Html.DropDownList("MediumTypeFilter", (List<SelectListItem>)ViewBag.MediumTypes, "*", new { @class = "form-control" })
+            </div>
+          
+            <div class="col-md-1">
+                <i class="glyphicon glyphicon-search"></i>
+                @Html.Label(BasicRes.Title, new { @class = "control-label" })
+            </div> 
+            <div class="col-md-2">
+                @Html.TextBox("TitleFilter", "", new { @class = "form-control" })
+            </div>
+            <!-- OK Button -->
+            <div class="col-md-1">
+                <input type="submit" class="form-control btn-primary" value="OK" />
+            </div>
+        </div>     
+
+    }    
+
+</p>
+
+<table id="movieTable" class="table alternating">
+    <tr>
+        <th class="hidden"></th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.GenreId)
+        </th>
+        <th class="hidden"></th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreCd)
+        </th>
+        <th class="hidden"></th>
+        <th>
+            @Html.DisplayNameFor(model => model.MediumTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="hidden">
+                @Html.DisplayFor(modleItem => item.MovieId)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modleItem => item.GenreId)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.GenreCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modleItem => item.GenreName)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modleItem => item.MediumTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediumTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="text-danger text-right">
+                @Html.DisplayFor(modelItem => item.Price, new { htmlAttributes = new { @class = "text-danger" } })
+            </td>
+            <td class="text-right">
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.ActionLink(BasicRes.Edit, "Edit", new { id = item.MovieId }) |
+                <a href="#" onclick="showMovieModal(this, false)">@BasicRes.Details</a> |
+                <a href="#" onclick="showMovieModal(this, true)">@BasicRes.Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.Partial("_DeleteModal", new ViewDataDictionary {{"Id", "movieModal" }, {"DeleteAction", "Delete"}, {"Controller", "Movie"}})
+
+@section scripts{
+    <script type="text/javascript">
+
+    </script>
+}

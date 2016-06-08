@@ -1,0 +1,86 @@
+﻿
+@using Globalization
+@using MyWebHzg.Frontend.HzgWeb.Models
+
+@model DirectoryTreeNode
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*Styles*@
+@section styles{
+    @Styles.Render("~/Content/bootstrap-tree.css")
+
+    <style type="text/css" >
+        #tree{
+            font-size: 12px;
+            min-height: 500px;
+        }
+    </style>
+}
+
+<h2>Index - Ajax Treeview Tutorial</h2>
+
+<div class="row">
+    <div class="col-md-4" id="partTree">
+        <div class="tree" id="tree">
+            <input type="hidden" id="ExpandText" value="@BasicRes.ExpandBranch" />
+            <input type="hidden" id="CollapseText" value="@BasicRes.CollapseBranch" />
+
+            <ul class="list-inline">
+                <li style="white-space: nowrap;" class="parent_li">
+                    <span onclick="ExpandCollapse(this);" title="@BasicRes.CollapseBranch">
+                        <i class="glyphicon glyphicon-minus-sign" ></i>&nbsp;@Html.DisplayFor(model => model.Text) 
+                    </span>
+
+                    @if(Model.HasChilds)
+                    {
+                        <ul>
+                            @foreach(DirectoryTreeNode node in Model.ChildNodes)
+                            {
+                                string onClick = (node.HasChilds) ? "InitDirectoryNode(this, '" + node.Path + "');" : "";
+                                string glyphicon = (node.HasChilds) ? "glyphicon-plus-sign" : "glyphicon-minus-sign";
+                                string parentLi = (node.HasChilds) ? "parent_li" : string.Empty;
+                                string title = (node.HasChilds) ? BasicRes.ExpandBranch : string.Empty;
+                                
+                                <li class="@parentLi">
+                                    <span onclick="@onClick" title="@title">
+                                        <i class="glyphicon @glyphicon"></i>&nbsp;@Html.DisplayFor(model => node.Text)
+                                    </span>
+                                </li>
+                            }
+                        </ul>                        
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    @*Dies ist, damit die Sanduhr kommt sobald ein Ajax Befehl gefeuert wird*@
+    @Scripts.Render("~/Scripts/jquery-ajax-listener.js");
+
+    <script type="text/javascript">
+        function ExpandCollapse(ctl){
+
+            var title = "";
+            var children = $(ctl).parent('li.parent_li').find('> ul > li');
+
+            if (children.is(":visible")) {
+                children.hide('fast');
+                title = $("#ExpandText").val();
+                $(ctl).attr('title', title).find(' > i').first().addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+            }
+            else {
+                children.show('fast');
+                title = $("#CollapseText").val();
+                $(ctl).attr('title', title).find(' > i').first().addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+            }
+        }
+
+    </script>    
+
+}

@@ -1,0 +1,68 @@
+﻿@model MyWebHzg.Frontend.HzgWeb.Models.NewEditMovieModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Create", "Movie", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Movie.MovieId);
+        
+    <h4>Movie</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movie.Title, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Movie.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Movie.Title)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movie.GenreId, "GenreId", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => Model.Movie.GenreId, Model.Genres, null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Movie.GenreId)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movie.MediumTypeId, "MediumTypeId", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => Model.Movie.MediumTypeId, Model.MediumTypes, null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Movie.MediumTypeId)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movie.Price, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Movie.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Movie.Price)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Movie.ReleaseDate, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Movie.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Movie.ReleaseDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
