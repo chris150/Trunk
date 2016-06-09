@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Globalization;
 
 namespace MyWebHzg.Entities
 {
@@ -14,7 +15,9 @@ namespace MyWebHzg.Entities
         public virtual DateTime CreateDateTime { get; set; }
 
         // Allgemein
-        public virtual int Witterungstemperatur { get; set; }
+        [Display(Name = "Sym_Witterungstemperatur", ResourceType = typeof(BasicRes))]
+        [DisplayFormat(DataFormatString = "{0:0.0}", ApplyFormatInEditMode = true)]
+        public virtual double Witterungstemperatur { get; set; }
 
     }
 }

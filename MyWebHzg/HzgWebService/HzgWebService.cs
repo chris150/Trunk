@@ -16,8 +16,10 @@ namespace MyWebHzg.Service
         private IGenreRepository _IGenreRepository;
         private IMediumTypeRepository _IMediumTypeRepository;
 
+        private IActualValueAllgRepository _IActualValueAllgRepository;
+
         #endregion
-        
+
         #region ctor | dtor
         public HzgWebService()
         {
@@ -25,6 +27,8 @@ namespace MyWebHzg.Service
             this._IMovieRepository = new MovieRepository();
             this._IGenreRepository = new GenreRepository();
             this._IMediumTypeRepository = new MediumTypeRepository();
+
+            this._IActualValueAllgRepository = new ActualValueAllgRepository();
         }
         #endregion
 
@@ -135,18 +139,15 @@ namespace MyWebHzg.Service
         {
             await this._IMovieRepository.DeleteAsync(movie);
         }
-        
-        #endregion
-
-        #region Genre
 
         #endregion
 
-        #region MediumType
+        #region ActualValueAllg
 
-        #endregion
-
-        #region Actor
+        public async Task<List<ActualValueAllg>> GetAllActualValueAllgAsync()
+        {
+            return (await _IActualValueAllgRepository.GetAllAsync()).OrderBy(o => o.CreateDateTime).ToList();
+        }
 
         #endregion
     }

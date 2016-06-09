@@ -48,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201606061354082_Initial.cs" />
-    <Compile Include="Migrations\201606061354082_Initial.Designer.cs">
-      <DependentUpon>201606061354082_Initial.cs</DependentUpon>
+    <Compile Include="DatabaseContext\WebHzgContext.cs" />
+    <Compile Include="Migrations\201606091148115_aktualValueAllg.cs" />
+    <Compile Include="Migrations\201606091148115_aktualValueAllg.Designer.cs">
+      <DependentUpon>201606091148115_aktualValueAllg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ActualValueAllgRepository.cs" />
+    <Compile Include="Repositories\IActualValueAllgRepository.cs" />
     <Compile Include="Repositories\MediumTypeRepository.cs" />
     <Compile Include="Repositories\IMediumTypeRepository.cs" />
     <Compile Include="Repositories\IGenreRepository.cs" />
@@ -83,8 +86,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201606061354082_Initial.resx">
-      <DependentUpon>201606061354082_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606091148115_aktualValueAllg.resx">
+      <DependentUpon>201606091148115_aktualValueAllg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace MyWebHzg.Repositories.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class aktualValueAllg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(aktualValueAllg));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606061354082_Initial"; }
+            get { return "201606091148115_aktualValueAllg"; }
         }
         
         string IMigrationMetadata.Source
