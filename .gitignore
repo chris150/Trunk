@@ -17,6 +17,7 @@ $RECYCLE.BIN/
 # my specific ignores
 obj/
 bin/
+*.suo
 
 # Windows shortcuts
 *.lnk
