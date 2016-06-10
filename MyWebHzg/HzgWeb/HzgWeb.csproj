@@ -219,6 +219,7 @@
     </Content>
     <Content Include="Content\bootstrap-tree.less" />
     <Content Include="Grid.mvc.readme" />
+    <None Include="Properties\PublishProfiles\myPublicProject.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\application\WikiMediaWeb.js" />
     <Content Include="Scripts\bootstrap-tree.js" />

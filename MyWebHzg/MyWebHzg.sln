@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWebHzgTest", "MyWebHzgTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HzgWeb", "HzgWeb\HzgWeb.csproj", "{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModbusTCPClient", "ModbusTCPClient\ModbusTCPClient.csproj", "{D62D9CB7-83E3-4ECC-9655-B81AD8FA163B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F117B908-FFDE-41D0-A8D4-07EAA6F1D400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D62D9CB7-83E3-4ECC-9655-B81AD8FA163B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D62D9CB7-83E3-4ECC-9655-B81AD8FA163B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D62D9CB7-83E3-4ECC-9655-B81AD8FA163B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D62D9CB7-83E3-4ECC-9655-B81AD8FA163B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

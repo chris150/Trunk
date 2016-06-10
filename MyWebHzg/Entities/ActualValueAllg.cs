@@ -12,6 +12,7 @@ namespace MyWebHzg.Entities
     {
         [Key]
         public virtual Guid Id { get; set; }
+        [Display(Name = "Sym_CreateDateTime", ResourceType = typeof(BasicRes))]
         public virtual DateTime CreateDateTime { get; set; }
 
         // Allgemein

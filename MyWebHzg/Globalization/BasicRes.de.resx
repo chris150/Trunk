@@ -153,6 +153,9 @@
   <data name="ReleaseDate" xml:space="preserve">
     <value>Veröffentlich.-Dat.</value>
   </data>
+  <data name="Sym_CreateDateTime" xml:space="preserve">
+    <value>Ersteller Datum</value>
+  </data>
   <data name="Sym_Witterungstemperatur" xml:space="preserve">
     <value>Witterungstemperatur</value>
   </data>

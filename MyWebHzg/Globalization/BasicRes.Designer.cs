@@ -169,6 +169,15 @@ namespace Globalization {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Create Date ähnelt.
+        /// </summary>
+        public static string Sym_CreateDateTime {
+            get {
+                return ResourceManager.GetString("Sym_CreateDateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Outdoor temperature ähnelt.
         /// </summary>
         public static string Sym_Witterungstemperatur {
